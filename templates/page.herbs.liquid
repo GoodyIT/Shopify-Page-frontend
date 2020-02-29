@@ -1,0 +1,270 @@
+{% assign image = 'herbs-top_2x.png' | asset_url %}
+<div class="hero lazyloaded herbs-banner" data-section-type="hero" style="background-image: url('{{image}}'); height: 464px;">
+  <header class="section-header text-center">
+    <h1 class="section-header__title h2">{{ page.title }}</h1>
+  </header>
+</div>
+
+<div class="herbs-tab-section" style="padding: 30px 0;">
+  {{ 'side_flowers_4_herbs.png' | asset_url  | img_tag: 'Left side image', 'herbs-left-image' }}
+  {{ 'side_flowers_5_herbs.png' | asset_url  | img_tag: 'Right side image', 'herbs-right-image' }}
+  <div class="page-width">
+    <div class="grid--uniform">
+      <div class="small--one-whole" style="margin-right: -10px;">
+        <div class="tab">
+          <div class="button-group">
+            <button class="tablinks mb-sm-10p" onclick="openTab(event, 'relax_sleep_quality')" data-id="relax" id="defaultOpen">Relax & Sleep Quality</button>
+            <button class="tablinks mb-sm-10p" onclick="openTab(event, 'digest_gut_health')" data-id="digest">Digest & Gut Health</button>
+            <button class="tablinks mb-sm-10p" onclick="openTab(event, 'anti_aging_immunity')" data-id="anti">Anti-aging & Immunity</button>
+          </div>
+          <div class="input-group">
+            <input class="search-input" type="text" name="search" placeholder="SEARCH" />
+            <div class="input-group-prepend">
+              <button class="p-2 m-0">{{ 'icon-search.png' | asset_url | img_tag: "search", "search_icon"}}</button>
+            </div>
+          </div>
+          
+        </div>
+
+        <div id="relax_sleep_quality" class="tabcontent">
+          <div class="grid--uniform relax-box">
+          </div>
+        </div>
+
+        <div id="digest_gut_health" class="tabcontent">
+          <div class="grid--uniform digest-box">
+            
+          </div>
+        </div>
+
+        <div id="anti_aging_immunity" class="tabcontent">
+          <div class="grid--uniform anti-box">
+            
+          </div>
+        </div>
+        <div id="anti_aging_immunity" class="tabcontent">
+          <h3>Tokyo</h3>
+          <p>Tokyo is the capital of Japan.</p>
+        </div>
+      </div>
+  </div>
+</div>
+
+<script>
+  let  relax_headers = ["Chamomile", "Valerian Root", "Lavander", "Lemon Balm", "Passion Flower", "Spearmint", "Catnip", "Linden Leaf/Tilia Tea", "Hops Tea", "St. John's Wort", "Skullcap"];
+  let relax_nicknames = ["The Multitasker", "The Snoozer", "The Purple Power of Positivity", "The Refresher", "The Picker Upper", "The Minty Memory Maker", "The Real Cat's Pajamas", "The Relaxer", "The Sleepy Time Sipper", "The Ray of Sunshine", "The Germ Fighter"];
+  let relax_descriptions = ["Drinking chamomile tea can promote better sleep, boost your immunity and soothe your stomach. In addition, it is often used to treat symptoms of anxiety as well as acne.", "Valerian root has been shown to help reduce anxiety and promote better sleep. It is known for its capacity to reduce restlessness as well as its effectiveness in reducing symptoms of menstrual and menopausal pain.", "Lavender has often been used to treat symptoms of mental illness, such as anxiety, insomnia, and depression. It can also help treat fungal infections as well as soothe headaches.", "Studies show that lemon balm is effective in lowering stress and anxiety levels and boosting cognitive function. It can also help treat sleeping disorders and headaches.", "Passionflower is a powerful antidote to anxiety and insomnia. It can also help treat stomachaches.", "The high antioxidant levels in spearmint make it ideal for fighting bacterial infections. Spearmint is also known to help treat stomach pain, improve memory function, and promote relaxation.", "Catnip has been known to help relieve stress and anxiety, treat indigestion, and promote better quality sleep.", "Linden leaf, an ingredient in tilia tea, is often used to promote relaxation and better sleep, fight inflammation, and reduce symptoms of chronic pain, inculding stomachaches.", "Sipping hops tea can help reduce anxiety levels, improve your sleep, stimulate your digestive system, reduce skin inflammation. Its high levels of antioxidants can also help you fight off bacterial infections.", "St. John's Wort is a strong antidepressant that can help elevate your mood and reduce your anxiety to help you sleep better at night.", "Skullcap is known to boost moods, reduce anxiety and promote better sleep. It also possesses powerful antibacterial, antiviral, and anti-inflammatory properties."];
+   let relax_images = ["herb-chamomile.png", "herb-valerian.png", "herb-lavander.png", "herb-lemon-balm.png", "herb-passion-flower.png", "herb-peppermint.png", "herb-catnip.png", "herb-linden.png", "herb-hops.png", "herb-st-john.png", "herb-skullcap.png"];
+
+  let digest_headers = ["Peppermint", "Chamomile", "Ginger Root", "Fennel", "Licorice Root", "Dandelion", "Chicory Root", "Basil"];
+  let digest_nicknames = ["The Headache Helper", "The Multitasker", "The Digestive with a Kick", "The Fiber Hero", "The Sweetest Stress Reliever", "The Vitamin Boost", "The Good Gut Grower", "The Nutrient Blend"];
+  let digest_descriptions = ["Peppermint has been shown to treat headaches (including migraines), soothe your stomach, and improve your sleep. It can also help you fight bacterial infections.", "Drinking chamomile tea can promote better sleep, boost your immunity and soothe your stomach. In addition, it is often used to treat symptoms of anxiety as well as acne.", "Zingy ginger can help treat symptoms of nausea, relieve muscle pain and soreness, and help with indigestion. It can also help you improve your brain function and potentially help protect you against Alzheimer's.", "Fennel contains crucial nutrients like vitamin C that contribute to its high levels of antioxidants. It also has high fiber content and antibacterial properties.", "Licorice root not only promotes lung health, but also reduces stress and helps treat upset stomachs.", "Dandelion is loaded with vitamins A, C, K, and B to help boost your immunity. It's also got anti-infammatory properties that help support healthy digestion and treat symptoms of constipation.", "Anti-inflammatory chicory root contains significant amounts of fiber and promotes healthy gut bacteria. It can also help relieve stress.", "Adding basil to your tea contributes vitamins A and C, as well as other nutrients like iron, zinc, and calcium. It can help reduce stress and anxiety, as well as protect your stomach against ulcers."];
+  let digest_images = ["herb-peppermint.png", "herb-chamomile.png", "herb-ginger.png", "herb-fennel.png", "herb-liquorice.png", "herb-dandelion.png", "herb-chicory.png", "herb-basil.png"];
+
+  let anti_headers = ["Green Tea", "Lemon", "Lemongrass", "Raw Honey", "Cinnamon", "Ginger", "Cloves", "Turmeric"];
+  let anti_nicknames = ["The Wake Up Call", "The Bright Side", "The Infection Protection", "The Smooth Operator", "The Spice of Life", "The Digestive With a Kick", "The Body Guard", "The Brain Booster"];
+  let anti_descriptions = ["Drinking green tea can help reduce inflammation, improve your brain function, and fight bacterial infection. As a plus, the caffeine helps stimulate your mind and body.", "Adding lemon to your tea adds significant amounts of vitamin C that can help improve your complexion. Lemon has also been shown to aid digestion and protect agsint kidney stones.", "Lemongrass helps promote better sleep and healthier digestion. It also has high levels of antioxidants, as well as antimicrobial and anti-inflammatory properties to help you stay healthy.", "Raw honey is high in antioxidants. Its antibacterial and antifungal properties make it ideal for treating digestive issues as well as cough and sore throat symptoms.", "Cinnamon's high antioxidant levels and anti-inflammatory properties can help you fight bacterial and fungal infections.", "Zingy ginger can help treat symptoms of nausea, relieve muscle pain and soreness, and help with indigestion. It can also help you improve your brain function and potentially help protect you against Alzheimer's.", "Cloves are full of vitamins C and K, as well as fiber. They can help you promote liver and bone health, as well as reduce stomach ulcers.", "Golden turmeric's high antioxidant levels and anti-inflammatory properties help boost brain activity and improve brain function. Turmeric can also boost your mood and protect you against agerelated chronic diseases.", ""];
+  let anti_images = ["herb-green-tea.png", "herb-lemon.png", "herb-lemongrass.png", "herb-raw-honey.png", "herb-chamomile.png", "herb-ginger.png", "herb-cloves.png", "herb-turmeric.png"];
+
+  let active_tabname = 'relax_sleep_quality';
+  
+
+  let makeAntiTab = function(query="") {
+    query = query.toLowerCase();
+    const asset_url = document.querySelector('.search_icon').getAttribute('src').split('assets')[0]; 
+    let content = ` <div class=" small--one-whole medium-up--one-half relax-grid">
+              <div class="static-image-block" style="background-image: url('${asset_url}assets/herbs-immunity.png');">
+              </div>
+          </div>`;
+    for (let idx = 0; idx < 8; idx++ ) {
+        content += `<div class=" small--one-half medium-up--one-quarter mb-20 mb-sm-10p no-select">
+            <div class="herb_image-block">
+              <img src="${asset_url}assets/${anti_images[idx]}" alt="herb-image" class="herb-image lazyloaded" />
+              <div class="herb-title">${anti_headers[idx]}</div>
+              <div class="herb-sub-title">${anti_nicknames[idx]}</div>
+              <div class="herb-text-container">
+                <p class="herb-description">${anti_descriptions[idx]}</p>
+              </div>
+            </div>
+          </div>`;
+    }
+
+    content += `<div class=" small--one-whole medium-up--one-half herb-last-block" style="background-image: url({{'herbs-bottom-immunity.png' | asset_url}});">
+              <div class="herbs-bottom-immunity">
+                <div class="herb-bottom-title">Get Yourself a Box of Stronger Immunity Teas</div>
+                <a href="/products/stronger-immunity-tea-box" class="custom_btn shop_now_btn">
+                  Shop Now
+                </a>
+              </div>
+            </div>`;
+    document.querySelector('div.anti-box').innerHTML = content;
+  }
+
+  let makeDigestTab = function(query="") {
+    query = query.toLowerCase();
+    const asset_url = document.querySelector('.search_icon').getAttribute('src').split('assets')[0];
+    let content = ` <div class=" small--one-whole medium-up--one-half relax-grid">
+              <div class="static-image-block" style="background-image: url('${asset_url}assets/herbs-digest.png');">
+              </div>
+            </div>`;
+    for (let idx = 0; idx < 8; idx++ ) {
+        content += `<div class=" small--one-half medium-up--one-quarter mb-20 mb-sm-10p no-select">
+            <div class="herb_image-block">
+              <img src="${asset_url}assets/${digest_images[idx]}" alt="herb-image" class="herb-image lazyloaded" />
+              <div class="herb-title">${digest_headers[idx]}</div>
+              <div class="herb-sub-title">${digest_nicknames[idx]}</div>
+              <div class="herb-text-container">
+                <p class="herb-description">${digest_descriptions[idx]}</p>
+              </div>
+            </div>
+          </div>`;
+    }
+
+    content += `<div class=" small--one-whole medium-up--one-half herb-last-block" style="background-image: url({{'herbs-bottom-digest.png' | asset_url}});">
+              <div class="herbs-bottom-immunity">
+                <div class="herb-bottom-title">Get Yourself a Box of better digestion Teas</div>
+                <a href="/products/tummy-tamer-tea-box" class="custom_btn shop_now_btn">
+                  Shop Now
+                </a>
+              </div>
+            </div>`;
+    document.querySelector('div.digest-box').innerHTML = content;
+  }
+
+  let makeRelaxTab = function(query="") {
+    query = query.toLowerCase();
+    const asset_url = document.querySelector('.search_icon').getAttribute('src').split('assets')[0];
+    let content = ` <div class=" small--one-whole medium-up--one-half relax-grid">
+              <div class="static-image-block" style="background-image: url('${asset_url}assets/herbs-sleep.png');">
+              </div>
+            </div>`;
+    for (let idx = 0; idx < 11; idx++ ) {
+        content += `<div class=" small--one-half medium-up--one-quarter mb-20 mb-sm-10p no-select">
+            <div class="herb_image-block">
+              <img src="${asset_url}assets/${relax_images[idx]}" alt="herb-image" class="herb-image lazyloaded" />
+              <div class="herb-title">${relax_headers[idx]}</div>
+              <div class="herb-sub-title">${relax_nicknames[idx]}</div>
+              <div class="herb-text-container">
+                <p class="herb-description">${relax_descriptions[idx]}</p>
+              </div>
+            </div>
+          </div>`;
+    }
+
+    content += `<div class=" small--one-whole medium-up--one-half herb-last-block" >
+            <div class="herbs-bottom-immunity" style="background-image: url({{'herbs-bottom-sleep.png' | asset_url}});">
+              <div class="herb-bottom-title">Get Yourself a Box of Sleep Better Teas</div>
+              <a href="/products/night-time-herbal-tea-box" class="custom_btn shop_now_btn">
+                Shop Now
+              </a>
+            </div>
+          </div>`;
+    document.querySelector('div.relax-box').innerHTML = content;
+  }
+
+  function openTab(evt, tabName) {
+    active_tabname = tabName;
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+    if (active_tabname == 'relax_sleep_quality') {
+      makeRelaxTab();
+    } else if (active_tabname == 'digest_gut_health') {
+      makeDigestTab();
+    } else {
+      makeAntiTab();
+    }
+  }
+  document.getElementById("defaultOpen").click();
+
+  var ready = function() {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      document.querySelectorAll('.herb_image-block').forEach(function(e) { e.classList.add('active') });
+    }
+
+    makeRelaxTab();
+
+    $('input.search-input').keyup(function(event) {
+      // skip for arrow keys
+      if(event.which >= 37 && event.which <= 40) return;
+      const query = $(this).val().toLowerCase();
+
+      let content = '';
+      const asset_url = document.querySelector('.search_icon').getAttribute('src').split('assets')[0];
+      let new_headers = relax_headers;
+      let new_images = relax_images;
+      let new_nicknames = relax_nicknames;
+      let new_descriptions = relax_descriptions;
+
+      for (let idx = 0; idx < 8; idx++ ) {
+        if (new_headers.includes(digest_headers[idx])) {
+          continue;
+        } 
+
+        new_headers.push(digest_headers[idx]);
+        new_nicknames.push(digest_nicknames[idx]);
+        new_images.push(digest_images[idx]);
+        new_descriptions.push(digest_descriptions[idx]);
+      }
+
+      for (let idx = 0; idx < 8; idx++ ) {
+        if (new_headers.includes(anti_headers[idx])) {
+          continue;
+        }
+        new_headers.push(anti_headers[idx]);
+        new_nicknames.push(anti_nicknames[idx]);
+        new_images.push(anti_images[idx]);
+        new_descriptions.push(anti_descriptions[idx]);
+      }
+
+      for (let idx = 0; idx < new_headers.length; idx++ ) {
+        if (new_headers[idx].toLowerCase().includes(query) || new_nicknames[idx].toLowerCase().includes(query) || new_descriptions[idx].toLowerCase().includes(query)) {
+          content += `<div class=" small--one-half medium-up--one-quarter mb-20 mb-sm-10p no-select">
+              <div class="herb_image-block">
+                <img src="${asset_url}assets/${new_images[idx]}" alt="herb-image" class="herb-image lazyloaded" />
+                <div class="herb-title">${new_headers[idx]}</div>
+                <div class="herb-sub-title">${new_nicknames[idx]}</div>
+                <div class="herb-text-container">
+                  <p class="herb-description">${new_descriptions[idx]}</p>
+                </div>
+              </div>
+            </div>`;
+        }
+      }
+    
+      if (active_tabname == 'relax_sleep_quality') {
+        $('div.relax-box').html(content);
+      } else if (active_tabname == 'digest_gut_health') {
+        $('div.digest-box').html(content);
+      } else {
+        $('div.anti-box').html(content);
+      }
+
+      if (query.length == 0) {
+        $('.herb-last-block').show();
+        $('.relax-grid').show();
+        if (active_tabname == 'relax_sleep_quality') {
+          makeRelaxTab();
+        } else if (active_tabname == 'digest_gut_health') {
+          makeDigestTab();
+        } else {
+          makeAntiTab();
+        }
+      } else {
+        $('.herb-last-block').hide();
+        $('.relax-grid').hide();
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", ready);
+</script>
+

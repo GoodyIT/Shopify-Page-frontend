@@ -1,0 +1,10 @@
+<div class="card critical-clear" id="Card-{{ product.id }}" data-animate>
+  <a href="{{ product.url | within: collection }}" class="card__wrapper{% if section.settings.show_spacing %} card__wrapper--padding{% endif %} text-center white-bg">
+    {% if product.featured_image %}
+      {% include 'card-image', type: product.featured_image, grid_style: grid_style %}
+    {% endif %}
+    <div class="featured__content h6">{{product.content}}</div> 
+    <div class="card__info{% if grid_style == 'grid' %} card__info--aligned{% endif %} white-bg" style="height: 0">
+    </div>
+  </a>
+</div>
